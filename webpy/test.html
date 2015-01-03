@@ -1,0 +1,33 @@
+$def with(hello)
+<p> $hello </p>
+<p> ${'hello' * 10} </p>
+<p> $hello[1]<p>
+$ dd = " 1 < > 2 "
+<p>$dd</p>
+<p>$:dd</p> $# hello
+
+$for i in range(10):
+	<p> OK $i </p>
+
+<table>
+$for c in ["a", "b", "c"]:
+	<tr class="$loop.parity">
+		<td> $loop.index</td>
+		<td> $c </td>
+	</tr>
+</table>
+
+
+$def say_ok(name='yes'):
+	OK, $name
+
+$say_ok('ooo')
+$say_ok()
+
+$code:
+	x = 'hello'
+	y = 'world'	
+	def ok(s):
+		return x + " " + y + s
+
+$ok('a')
